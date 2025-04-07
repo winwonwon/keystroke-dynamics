@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <script>
+        function deleteUser(username) {
+            fetch(`/delete_user/${username}`, { method: 'POST' })
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.message);
+                    location.reload();
+                });
+        }
+    </script>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Samples</th>
+            <th>Actions</th>
+        </tr>
+        {% for username, data in users.items() %}
+        <tr>
+            <td>{{ username }}</td>
+            <td>{{ data.samples|length }}</td>
+            <td><button onclick="deleteUser('{{ username }}')">Delete</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">← Back to Login</a>
+</body>
+</html>

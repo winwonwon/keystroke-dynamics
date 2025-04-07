@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keystroke Dynamics</title>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <h2>Keystroke Dynamics Login</h2>
+    <input id="username" placeholder="Username"><br><br>
+    <input id="password" type="password" placeholder="Password"><br><br>
+    <button onclick="submitForm('register')">Register</button>
+    <button onclick="submitForm('login')">Login</button>
+    <p id="result"></p>
+</body>
+</html>
