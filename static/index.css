@@ -1,0 +1,128 @@
+body {
+    background-color: #FFF8F8;
+    color: #0118D8;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #1B56FD;
+    font-weight: bold;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+#username {
+    width: 310px;
+    padding: 10px;
+    margin: 0;
+    background-color: #e9edf0c1;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.password-input-wrapper {
+    position: relative;
+    width: 250px;
+    gap: 10px;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+#password {
+    width: 100%;
+    padding: 10px;
+    background-color: #e9edf0c1;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#togglePassword, #resetPassword {
+    cursor: pointer;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    background: none;
+    border: none;
+    color: #1B56FD;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#togglePassword:hover, #resetPassword:hover {
+    color: #0118D8;
+}
+
+#keyStatus {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff4444;
+    transition: background-color 0.2s ease;
+}
+
+#keyStatus.active {
+    background-color: #44ff44;
+}
+
+button {
+    background-color: #1B56FD;
+    color: #FFF8F8;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #0118D8;
+}
+
+.spinner {
+    display: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1B56FD;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#result {
+    margin-top: 20px;
+    min-height: 20px;
+}
+
+#result.success { color: #2ecc71; }
+#result.error   { color: #e74c3c; }

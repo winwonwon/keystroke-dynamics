@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+
     <script>
         function deleteUser(username) {
             fetch(`/delete_user/${username}`, { method: 'POST' })
@@ -16,7 +19,7 @@
 </head>
 <body>
     <h2>Admin Dashboard</h2>
-    <table border="1">
+    <table>
         <tr>
             <th>Username</th>
             <th>Samples</th>
@@ -26,7 +29,11 @@
         <tr>
             <td>{{ username }}</td>
             <td>{{ data.samples|length }}</td>
-            <td><button onclick="deleteUser('{{ username }}')">Delete</button></td>
+            <td>
+                <button onclick="deleteUser('{{ username }}')" title="Delete User">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </button>
+            </td>
         </tr>
         {% endfor %}
     </table>

@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Keystroke Dynamics</title>
-    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
     <h2>Keystroke Dynamics Login</h2>
-    <input id="username" placeholder="Username"><br><br>
-    <input id="password" type="password" placeholder="Password"><br><br>
-    <button onclick="submitForm('register')">Register</button>
-    <button onclick="submitForm('login')">Login</button>
-    <p id="result"></p>
+    <div class="form-container">
+        <input id="username" placeholder="Username">
+        
+        <div class="password-container">
+            <div class="password-input-wrapper">
+                <input id="password" type="password" placeholder="Password">
+            </div>
+            <div class="password-icons">
+                <button id="resetPassword" type="button" title="Clear input">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="togglePassword" type="button">
+                    <i class="fas fa-eye-slash"></i>
+                </button>
+            </div>
+        </div>
+        <div id="keyStatus" title="Key press indicator"></div>
+        <div class="button-container">
+            <button onclick="submitForm('register')">Register</button>
+            <button onclick="submitForm('login')">Login</button>
+            <div id="spinner" class="spinner"></div>
+        </div>
+        
+        <p id="result"></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
