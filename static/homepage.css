@@ -1,0 +1,121 @@
+body {
+    background-color: #FFF8F8;
+    color: #0118D8;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    color: #1B56FD;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.username {
+    font-weight: bold;
+    color: #1B56FD;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-color: #e9edf0c1;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 36px;
+    color: #1B56FD;
+    margin-right: 20px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    color: #1B56FD;
+}
+
+.card-content p {
+    margin: 0;
+}
+
+.stats-container {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: #e9edf0c1;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1B56FD;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+.primary-button {
+    background-color: #1B56FD;
+    color: #FFF8F8;
+}
+
+.primary-button:hover {
+    background-color: #0118D8;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: #FFF8F8;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}

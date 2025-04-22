@@ -39,8 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentType = pw.getAttribute('type');
         const newType = currentType === 'password' ? 'text' : 'password';
         pw.setAttribute('type', newType);
-        togglePassword.classList.toggle('fa-eye-slash');
-        togglePassword.classList.toggle('fa-eye');
+        togglePassword.querySelector('i').className = newType === 'password' ? 'fas fa-eye-slash' : 'fas fa-eye';
     });
 
     // Reset input and keystroke history when reset icon is clicked
@@ -99,9 +98,18 @@ function submitForm(action) {
         // On success, display message and reset fields
         resultElement.innerText = data.message;
         resultElement.classList.add('success');
-        usernameField.value = '';
-        passwordField.value = '';
-        usernameField.focus();
+        
+        // If login was successful, redirect to the login page
+        if (action === 'login') {
+            setTimeout(() => {
+                window.location.href = `/homepage/${username}`;
+            }, 1000); // Delay for 1 second to show success message
+        } else {
+            // Reset fields for registration
+            usernameField.value = '';
+            passwordField.value = '';
+            usernameField.focus();
+        }
     })
     .catch(err => {
         // Show error message; reset if specific conditions met

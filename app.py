@@ -140,6 +140,19 @@ def delete_user(username):
     return jsonify({"message": "User not found"}), 404
 
 
+@app.route('/homepage/<username>')
+def homepage(username):
+    """Render the login success page for logged-in users."""
+    # Verify the user exists
+    if username not in users:
+        return jsonify({"message": "User not found"}), 404
+        
+    # Get the number of keystroke samples
+    sample_count = len(users[username]["samples"])
+    
+    return render_template('homepage.html', username=username, sample_count=sample_count)
+
+
 if __name__ == '__main__':
     # Start Flask development server
     app.run(debug=True)
