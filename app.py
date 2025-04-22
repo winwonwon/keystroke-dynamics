@@ -28,15 +28,12 @@ def extract_features(keystrokes):
     - flight_times: time between consecutive key presses
     """
     hold_times = [k['hold'] for k in keystrokes]
-    flight_times = [
-        keystrokes[i+1]['time'] - keystrokes[i]['time']
-        for i in range(len(keystrokes) - 1)
-    ]
+    flight_times = [keystrokes[i+1]['time'] - keystrokes[i]['time'] for i in range(len(keystrokes) - 1)]
+    
     return {
         "hold_mean": sum(hold_times) / len(hold_times) if hold_times else 0,
         "flight_mean": sum(flight_times) / len(flight_times) if flight_times else 0
     }
-
 
 def is_similar(f1, f2):
     """
@@ -46,7 +43,6 @@ def is_similar(f1, f2):
         abs(f1["hold_mean"] - f2["hold_mean"]) < 40
         and abs(f1["flight_mean"] - f2["flight_mean"]) < 40
     )
-
 
 def average_features(samples):
     """
@@ -61,7 +57,6 @@ def average_features(samples):
     hold = sum(s["hold_mean"] * w for s, w in zip(samples, weights)) / total
     flight = sum(s["flight_mean"] * w for s, w in zip(samples, weights)) / total
     return {"hold_mean": hold, "flight_mean": flight}
-
 
 @app.route('/')
 def index():

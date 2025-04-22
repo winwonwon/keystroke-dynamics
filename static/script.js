@@ -54,10 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/**
- * Handle form submission for login or registration
- * @param {string} action - Endpoint to call ("login" or "register")
- */
 function submitForm(action) {
     if (isSubmitting) return;
 
@@ -128,9 +124,8 @@ function submitForm(action) {
     });
 }
 
-/**
- * Clear password field, keystroke data, and reset status indicators
- */
+
+// Clear password field, keystroke data, and reset status indicators
 function resetPasswordInput() {
     const pw = document.getElementById('password');
     const keyStatus = document.getElementById('keyStatus');
